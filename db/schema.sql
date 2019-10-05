@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS toast_db;
-CREATE DATABASE toast_db;
+DROP DATABASE IF EXISTS qt4ie2g51jk75gnt;
+CREATE DATABASE qt4ie2g51jk75gnt;
 
-USE toast_DB;
+USE qt4ie2g51jk75gnt;
 
 CREATE TABLE eventDetails
 (	eventId int NOT NULL AUTO_INCREMENT,
