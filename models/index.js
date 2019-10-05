@@ -9,22 +9,17 @@ var config = require(__dirname + "/../config/config")[env];
 var db = {};
 
 if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable], {
-    host: "localhost",
-    dialect: "mysql",
-    port: 3000
-  });
+  var sequelize = new Sequelize(process.env[config.use_env_variable]);
+  console.log(process.env);
 } else {
   var sequelize = new Sequelize(
-    "toast_db",
-    "root",
-    process.env.LOCALHOSTPASSWORD,
-    config, {
-    host: "localhost",
-    dialect: "mysql",
-    port: 3000
-  }
-  );
+    config.database,
+    config.username,
+    config.password,
+    {
+      host: "localhost",
+      dialect: "mysql"
+    });
 }
 
 fs.readdirSync(__dirname)
