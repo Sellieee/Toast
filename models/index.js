@@ -4,8 +4,10 @@ var fs = require("fs");
 var path = require("path");
 var Sequelize = require("sequelize");
 var basename = path.basename(module.filename);
+require("dotenv").config();
 var env = process.env.NODE_ENV || "development";
 var config = require(__dirname + "/../config/config")[env];
+
 var db = {};
 
 if (config.use_env_variable) {
@@ -13,9 +15,9 @@ if (config.use_env_variable) {
   console.log(process.env);
 } else {
   var sequelize = new Sequelize(
-    config.database,
-    config.username,
-    config.password,
+    "qt4ie2g51jk75gnt",
+    "y6f4fvstvoow7sng",
+    process.env.JAWS_PASS,
     {
       host: "bmsyhziszmhf61g1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
       dialect: "mysql"

@@ -1,6 +1,6 @@
 // Require bcrypt for password hashing for data privacy
 var bcrypt = require("bcryptjs");
-
+require("dotenv").config();
 
 // Create user model
 module.exports = function (sequelize, DataTypes) {
