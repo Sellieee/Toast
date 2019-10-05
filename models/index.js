@@ -12,16 +12,8 @@ var db = {};
 
 if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable], config);
-  console.log(process.env);
 } else {
-  var sequelize = new Sequelize(
-    "qt4ie2g51jk75gnt",
-    "y6f4fvstvoow7sng",
-    process.env.JAWS_PASS,
-    {
-      host: "bmsyhziszmhf61g1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-      dialect: "mysql"
-    });
+  var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
 fs.readdirSync(__dirname)
@@ -42,5 +34,6 @@ Object.keys(db).forEach(function (modelName) {
 });
 
 db.sequelize = sequelize;
+db.Sequelize = Sequelize;
 
 module.exports = db;
