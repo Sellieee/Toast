@@ -4,7 +4,7 @@ var LocalStrategy = require("passport-local").Strategy;
 var FacebookStrategy = require("passport-facebook").Strategy;
 require("dotenv").config();
 
-var db = require("./models");
+var db = require("../models");
 
 // Tells passport to use Local Strategy - login via email/username and password
 passport.use(new LocalStrategy(
