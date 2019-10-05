@@ -12,7 +12,8 @@ else {
     port: 3306,
     user: "root",
     password: "root",
-    database: "toast_db"
+    database: "toast_db",
+    dialect: "mysql"
   });
 }
 
